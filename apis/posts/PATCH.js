@@ -3,7 +3,7 @@ const errorMsgHandler = require('../../utils/errorMsgHandler')
 const Post = require('../../models/post')
 
 // PATCH (modified part of data)
-const patchRooms = async (req, res, body) => {
+const PATCH = async (req, res, body) => {
   const splitUrl = req.url.split('/').splice(2)
   const ID = splitUrl[0]
   const isRouteError = splitUrl.length > 1
@@ -40,4 +40,4 @@ const patchRooms = async (req, res, body) => {
     }
   }
 }
-module.exports = patchRooms
+module.exports = PATCH

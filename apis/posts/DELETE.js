@@ -1,8 +1,7 @@
 const {successHandle, errorHandle} = require('../../handler/index')
 const Post = require('../../models/post')
 
-const isDeleteAll = requestUrl =>
-  requestUrl.split('/').filter(e => e).length === 1
+const DELETE = requestUrl => requestUrl.split('/').filter(e => e).length === 1
 
 // DELETE
 const deleteRooms = async (req, res) => {
@@ -37,4 +36,4 @@ const deleteRooms = async (req, res) => {
     errorHandle(res, {data: `ID: '${ID}' is not exsit.`})
   }
 }
-module.exports = deleteRooms
+module.exports = DELETE
